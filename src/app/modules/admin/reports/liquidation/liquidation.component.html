@@ -1,0 +1,125 @@
+<div
+    class="flex flex-col flex-auto min-w-0 bg-card dark:bg-transparent sm:absolute sm:inset-0 sm:overflow-hidden"
+>
+    <div
+    class="relative flex flex-col px-6 py-8 border-b flex-0 sm:flex-row sm:items-center sm:justify-between md:px-8"
+    >
+        <div class="text-4xl font-extrabold tracking-tight">Liquidación</div>
+
+        <div class="flex items-center mt-4 shrink-0 sm:ml-4 sm:mt-0">
+
+            <mat-form-field
+            class="ml-4 fuse-mat-dense fuse-mat-rounded min-w-64"
+            [subscriptSizing]="'dynamic'"
+            >
+                <input matInput=""  placeholder="ID EPISODIO">
+            </mat-form-field>
+
+            <!-- Add product button -->
+            <button
+                class="ml-4"
+                mat-flat-button
+                [color]="'primary'"
+                (click)="procesar()"
+                type="button"
+            >
+                <!-- <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon> -->
+                <span class="ml-2 mr-1" >Procesar</span>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="flex flex-auto overflow-hidden">
+        <div
+            class="flex flex-col flex-auto overflow-hidden sm:mb-18 sm:overflow-y-auto"
+        >
+<!--        @if (conValor) {-->
+            <div class="flex flex-col pt-6">
+                <div class="-m-1.5 overflow-x-auto">
+                  <div class="p-1.5 min-w-full inline-block align-middle">
+                    <div class="overflow-hidden">
+                      <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+                        <caption class="p-6 text-sm text-gray-600 text-start dark:text-neutral-500">
+                            <button mat-button aria-label="Excel"
+                                    (click)="downloadExcel()"
+                                    type="button">
+                                <mat-icon svgIcon="heroicons_solid:table-cells"></mat-icon>
+                            </button>
+                            <button mat-button aria-label="Pdf"
+                                    (click)="downloadPdf()"
+                                    type="button">
+                                <mat-icon svgIcon="heroicons_solid:document"></mat-icon>
+                            </button>
+                        </caption>
+                        <thead>
+                        <tr>
+                            <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Número de Formato</th>
+                            <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Fecha Digitación</th>
+
+                        </tr>
+
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+                            @for (annex of annexes; track $index) {
+                                <tr>
+                                    <td class="px-6 py-4 text-base font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">{{ $index + 1 }}</td>
+                                    <td class="px-6 py-4 text-base text-gray-800 whitespace-nowrap dark:text-neutral-200">{{ annex.NFUA}}</td>
+
+
+                                </tr>
+                            } @empty {
+                                <td class="px-6 py-4 text-base text-gray-800 whitespace-nowrap dark:text-neutral-200">No hay información</td>
+                            }
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+            </div>
+<!--        } @else {-->
+<!--            <h4 class="mt-6 text-center">Ingrese los campos requeridos y procese</h4>-->
+<!--        }-->
+        </div>
+    </div>
+</div>
+
+
+<!-- <div
+    class="flex flex-col flex-auto min-w-0 bg-card dark:bg-transparent sm:absolute sm:inset-0 sm:overflow-hidden"
+>
+    <div
+    class="relative flex flex-col px-6 py-8 border-b flex-0 sm:flex-row sm:items-center sm:justify-between md:px-8"
+    >
+        <div class="text-4xl font-extrabold tracking-tight">Anexo 01</div>
+        <div class="flex items-center mt-6 shrink-0 sm:ml-4 sm:mt-0">
+
+            <mat-form-field
+                class="fuse-mat-dense fuse-mat-rounded min-w-64"
+
+            >
+                <mat-icon
+                    class="icon-size-5"
+                    matPrefix
+
+                ></mat-icon>
+                <input
+                    matInput
+
+                    [autocomplete]="'off'"
+                    [placeholder]="'Search products'"
+                />
+            </mat-form-field>
+
+            <button
+                class="ml-4"
+                mat-flat-button
+                [color]="'primary'"
+            >
+                <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+                <span class="ml-2 mr-1">Procesar</span>
+            </button>
+        </div>
+    </div>
+</div> -->
