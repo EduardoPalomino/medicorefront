@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -29,7 +29,7 @@ import { MatCheckbox } from '@angular/material/checkbox';
   templateUrl: './liquidation.component.html'
 })
 export class LiquidationComponent implements OnInit {
-
+    @ViewChild('idEpisodioInput') idEpisodioInput!: ElementRef;
   // public annexesService = inject(AnnexesService);
 
 
@@ -37,9 +37,23 @@ export class LiquidationComponent implements OnInit {
   public conValor: boolean = false;
 
   procesar() {
-    // this.listaFuas = fuas;
-    this.annexesService.getAnnexes()
-    .subscribe(annexes => this.annexes = annexes);
+      console.log("Function logger")
+      const idEpisodioValue = this.idEpisodioInput.nativeElement.value;
+      // Validar si está vacío
+      if (!idEpisodioValue) {
+          alert('El campo de ID EPISODIO no puede estar vacío.');
+          return; // Salir de la función si está vacío
+      }
+    const response = this.annexesService.getAnnexes(idEpisodioValue)
+    .subscribe(
+        annexes => {
+            console.log({annexes})
+
+            return this.annexes = annexes;
+        }
+    );
+
+      console.log(response)
     this.conValor = true;
 
   }
@@ -47,7 +61,13 @@ export class LiquidationComponent implements OnInit {
 
 
     downloadExcel() {
-        this.annexesService.getAnnexesExcel().subscribe(blob => {
+        const idEpisodioValue = this.idEpisodioInput.nativeElement.value;
+        // Validar si está vacío
+        if (!idEpisodioValue) {
+            alert('El campo de ID EPISODIO no puede estar vacío.');
+            return; // Salir de la función si está vacío
+        }
+        this.annexesService.getAnnexesExcel(idEpisodioValue).subscribe(blob => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -60,7 +80,13 @@ export class LiquidationComponent implements OnInit {
     }
 
     downloadPdf() {
-        this.annexesService.getAnnexesPdf().subscribe((blob: Blob) => {
+        const idEpisodioValue = this.idEpisodioInput.nativeElement.value;
+        // Validar si está vacío
+        if (!idEpisodioValue) {
+            alert('El campo de ID EPISODIO no puede estar vacío.');
+            return; // Salir de la función si está vacío
+        }
+        this.annexesService.getAnnexesPdf(idEpisodioValue).subscribe((blob: Blob) => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -68,6 +94,9 @@ export class LiquidationComponent implements OnInit {
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
+        }, error => {
+            console.error('Error downloading the file', error);
+
         });
     }
 

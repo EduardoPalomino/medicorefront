@@ -34,7 +34,7 @@ export interface InsuranceData {
 }
 
 export interface AnnexesResponse {
-    DATOS_DE_LA_ENTIDAD: EntityData[];
+    DATOS_DE_LA_ENTIDAD: any[];
     DATOS_DEL_ASEGURADO: InsuranceData[];
     MEDICAMENTOS: any[];  // Si necesitas manejar medicamentos, define su estructura
     PROCEDIMIENTOS: Procedure[];

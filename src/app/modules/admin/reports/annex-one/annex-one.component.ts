@@ -20,7 +20,7 @@ import { MatCheckbox } from '@angular/material/checkbox';
     MatButtonModule,
     MatDatepickerModule,
     ReactiveFormsModule,
-    
+
     NgClass,
     MatInputModule,
 
@@ -31,17 +31,17 @@ import { MatCheckbox } from '@angular/material/checkbox';
 export class AnnexOneComponent implements OnInit {
 
   // public annexesService = inject(AnnexesService);
-  
 
+  //
   // public listaFuas: fuasElement[] =[];
   public conValor: boolean = false;
 
   procesar() {
     // this.listaFuas = fuas;
-    this.annexesService.getAnnexes()
-    .subscribe(annexes => this.annexes = annexes);
-    this.conValor = true;
-    
+    // this.annexesService.getAnnexes()
+    // .subscribe(annexes => this.annexes = annexes);
+    // this.conValor = true;
+
   }
 
   public annexes: AnnexesResponse[] = [];
@@ -52,5 +52,5 @@ export class AnnexOneComponent implements OnInit {
     // this.annexesService.getAnnexes()
     //   .subscribe(annexes => this.annexes = annexes);
   }
-  
+
 }
