@@ -55,6 +55,11 @@
                         <thead>
 
                         <tr>
+                            <th scope="col" colspan="3" class="px-6 py-3 font-medium  uppercase  text-right w-full">Monto total de la atención : <strong>{{ (annexes.MEDICAMENTOS?.montoTotal || 0) + (annexes.PROCEDIMIENTOS?.montoTotal || 0) + (annexes.INSUMOS?.montoTotal || 0) }}
+                            </strong></th>
+
+                        </tr>
+                        <tr>
                             <th scope="col" colspan="3" class="px-6 py-3 font-medium text-white uppercase text-start bg-blue-600 w-full">DATOS DE LA ENTIDAD</th>
                         </tr>
                         <tr class="bg-gray-100">
@@ -128,7 +133,9 @@
                           </tbody>
 
                           <thead>
-
+                          <tr>
+                              <th scope="col" colspan="10" class="px-6 py-3 font-medium  uppercase  text-right w-full">Monto total de medicamentos : <strong>{{annexes.MEDICAMENTOS.montoTotal}}</strong></th>
+                          </tr>
                           <tr>
                               <th scope="col" colspan="10" class="px-6 py-3 font-medium text-white uppercase text-start bg-blue-600 w-full">MEDICAMENTOS</th>
                           </tr>
@@ -150,7 +157,7 @@
 
                               @if(annexes){
 
-                                  @for (annex of annexes.MEDICAMENTOS; track $index) {
+                                  @for (annex of annexes.MEDICAMENTOS.data; track $index) {
 
                                       <tr class="border-2 border-solid border-gray-300 border-t-0">
                                           <td class="px-6 py-4 text-base font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Codigo"]}}</td>
@@ -180,7 +187,9 @@
 
 
                           <thead>
-
+                          <tr>
+                              <th scope="col" colspan="8" class="px-6 py-3 font-medium  uppercase  text-right w-full">Monto total de procedimiento : <strong>{{annexes.PROCEDIMIENTOS.montoTotal}}</strong></th>
+                          </tr>
                           <tr>
                               <th scope="col" colspan="8" class="px-6 py-3 font-medium text-white uppercase text-start bg-blue-600 w-full">PROCEDIMIENTOS</th>
                           </tr>
@@ -201,10 +210,10 @@
 
                               @if(annexes){
 
-                                  @for (annex of annexes.PROCEDIMIENTOS; track $index) {
+                                  @for (annex of annexes.PROCEDIMIENTOS.data; track $index) {
 
                                       <tr class="border-2 border-solid border-gray-300 border-t-0">
-                                          <td class="px-6 py-4 text-base font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Código"]}}</td>
+                                          <td class="px-6 py-4 text-base font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Codigo"]}}</td>
                                           <td class="px-6 py-4 text-base text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Nombre"]}}</td>
                                           <td class="px-6 py-4 text-base text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Pres."]}}</td>
                                           <td class="px-6 py-4 text-base text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Entr."]}}</td>
@@ -228,7 +237,9 @@
 
 
                           <thead>
-
+                          <tr>
+                              <th scope="col" colspan="8" class="px-6 py-3 font-medium  uppercase  text-right w-full">Monto total de insumos : <strong>{{annexes.INSUMOS.montoTotal}}</strong></th>
+                          </tr>
                           <tr>
                               <th scope="col" colspan="8" class="px-6 py-3 font-medium text-white uppercase text-start bg-blue-600 w-full">INSUMOS</th>
                           </tr>
@@ -249,10 +260,10 @@
 
                               @if(annexes){
 
-                                  @for (annex of annexes.INSUMOS; track $index) {
+                                  @for (annex of annexes.INSUMOS.data; track $index) {
 
                                       <tr class="border-2 border-solid border-gray-300 border-t-0">
-                                          <td class="px-6 py-4 text-base font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Código"]}}</td>
+                                          <td class="px-6 py-4 text-base font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Codigo"]}}</td>
                                           <td class="px-6 py-4 text-base text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Nombre"]}}</td>
                                           <td class="px-6 py-4 text-base text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Pres."]}}</td>
                                           <td class="px-6 py-4 text-base text-gray-800 whitespace-nowrap dark:text-neutral-200">{{annex["Entr."]}}</td>
