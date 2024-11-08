@@ -55,17 +55,17 @@
                         <thead>
 
                         <tr>
-                            <th scope="col" colspan="3" class="px-6 py-1 font-medium  uppercase  text-right w-full">Monto total de la atención : <strong>{{ (annexes.MEDICAMENTOS?.montoTotal || 0) + (annexes.PROCEDIMIENTOS?.montoTotal || 0) + (annexes.INSUMOS?.montoTotal || 0) }}
+                            <th scope="col" colspan="3" class="px-6 py-3 font-medium  uppercase  text-right w-full">Monto total de la atención : <strong>{{ (annexes.MEDICAMENTOS?.montoTotal || 0) + (annexes.PROCEDIMIENTOS?.montoTotal || 0) + (annexes.INSUMOS?.montoTotal || 0) }}
                             </strong></th>
 
                         </tr>
                         <tr>
-                            <th scope="col" colspan="3" class="px-6 py-1 font-medium text-white uppercase text-start bg-blue-600 w-full">DATOS DE LA ENTIDAD</th>
+                            <th scope="col" colspan="3" class="px-6 py-3 font-medium text-white uppercase text-start bg-blue-600 w-full">DATOS DE LA ENTIDAD</th>
                         </tr>
                         <tr class="bg-gray-100">
-                            <th scope="col"  class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Número de Formato:</th>
-                            <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Fecha Digitación</th>
-                            <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">IPRESS</th>
+                            <th scope="col"  class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Número de Formato:</th>
+                            <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Fecha Digitación</th>
+                            <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">IPRESS</th>
 
                         </tr>
 
@@ -87,19 +87,23 @@
                         }@else {
                             <div>No hay</div>
                         }
+
+
+
+
+
                         </tbody>
-                      </table>
-                      <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+
                           <thead>
 
                           <tr>
-                              <th scope="col" colspan="4" class="px-6 py-1 font-medium text-white uppercase text-start bg-blue-600 w-full">DATOS DEL ASEGURADO</th>
+                              <th scope="col" colspan="4" class="px-6 py-3 font-medium text-white uppercase text-start bg-blue-600 w-full">DATOS DEL ASEGURADO</th>
                           </tr>
                           <tr class="bg-gray-100">
-                              <th scope="col"  class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nombres</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">N° Historia</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Contrato</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Fecha de Atención</th>
+                              <th scope="col"  class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nombres</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">N° Historia</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Contrato</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Fecha de Atención</th>
                           </tr>
 
                           </thead>
@@ -127,26 +131,25 @@
 
 
                           </tbody>
-                      </table>
-                      <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+
                           <thead>
                           <tr>
-                              <th scope="col" colspan="10" class="px-6 py-1 font-medium  uppercase  text-right w-full">Monto total de medicamentos : @if(annexes.MEDICAMENTOS.montoTotal){<strong>{{annexes.MEDICAMENTOS.montoTotal}}</strong>}</th>
+                              <th scope="col" colspan="10" class="px-6 py-3 font-medium  uppercase  text-right w-full">Monto total de medicamentos : <strong>{{annexes.MEDICAMENTOS.montoTotal}}</strong></th>
                           </tr>
                           <tr>
-                              <th scope="col" colspan="10" class="px-6 py-1 font-medium text-white uppercase text-start bg-blue-600 w-full">MEDICAMENTOS</th>
+                              <th scope="col" colspan="10" class="px-6 py-3 font-medium text-white uppercase text-start bg-blue-600 w-full">MEDICAMENTOS</th>
                           </tr>
                           <tr class="bg-gray-100">
-                              <th scope="col"  class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Codigo:</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nombre</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">FF</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Concentracion</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Pres.</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Entr.</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nro</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Dx.</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Precio</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Importe</th>
+                              <th scope="col"  class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Codigo:</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nombre</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">FF</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Concentracion</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Pres.</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Entr.</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nro</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Dx.</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Precio</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Importe</th>
                           </tr>
 
                           </thead>
@@ -175,26 +178,30 @@
                               }@else {
                                   <div>No hay</div>
                               }
+
+
+
+
+
                           </tbody>
-                        </table>
-                      <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+
 
                           <thead>
                           <tr>
-                              <th scope="col" colspan="8" class="px-6 py-1 font-medium  uppercase  text-right w-full">Monto total de procedimiento : @if(annexes){<strong>{{annexes.PROCEDIMIENTOS.montoTotal}}</strong>}</th>
+                              <th scope="col" colspan="8" class="px-6 py-3 font-medium  uppercase  text-right w-full">Monto total de procedimiento : <strong>{{annexes.PROCEDIMIENTOS.montoTotal}}</strong></th>
                           </tr>
                           <tr>
-                              <th scope="col" colspan="8" class="px-6 py-1 font-medium text-white uppercase text-start bg-blue-600 w-full">PROCEDIMIENTOS</th>
+                              <th scope="col" colspan="8" class="px-6 py-3 font-medium text-white uppercase text-start bg-blue-600 w-full">PROCEDIMIENTOS</th>
                           </tr>
                           <tr class="bg-gray-100">
-                              <th scope="col"  class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Código:</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nombre</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Pres.</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Entr.</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">N°</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Dx</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Precio</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Importe</th>
+                              <th scope="col"  class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Código:</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nombre</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Pres.</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Entr.</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">N°</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Dx</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Precio</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Importe</th>
 
                           </tr>
 
@@ -221,26 +228,30 @@
                               }@else {
                                   <div>No hay</div>
                               }
+
+
+
+
+
                           </tbody>
-                        </table>
-                      <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+
 
                           <thead>
                           <tr>
-                              <th scope="col" colspan="8" class="px-6 py-1 font-medium  uppercase  text-right w-full">Monto total de insumos : @if(annexes){<strong>{{annexes.INSUMOS.montoTotal}}</strong>}</th>
+                              <th scope="col" colspan="8" class="px-6 py-3 font-medium  uppercase  text-right w-full">Monto total de insumos : <strong>{{annexes.INSUMOS.montoTotal}}</strong></th>
                           </tr>
                           <tr>
-                              <th scope="col" colspan="8" class="px-6 py-1 font-medium text-white uppercase text-start bg-blue-600 w-full">INSUMOS</th>
+                              <th scope="col" colspan="8" class="px-6 py-3 font-medium text-white uppercase text-start bg-blue-600 w-full">INSUMOS</th>
                           </tr>
                           <tr class="bg-gray-100">
-                              <th scope="col"  class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Código</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nombre</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Pres.</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Entr.</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">N°</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Dx</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Precio</th>
-                              <th scope="col" class="px-6 py-1 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Importe</th>
+                              <th scope="col"  class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Código</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Nombre</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Pres.</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Entr.</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">N°</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Dx</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Precio</th>
+                              <th scope="col" class="px-6 py-3 font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Importe</th>
 
                           </tr>
 
@@ -267,8 +278,18 @@
                               }@else {
                                   <div>No hay</div>
                               }
+
+
+
+
+
                           </tbody>
-                        </table>
+
+
+
+
+
+                      </table>
                     </div>
                   </div>
                 </div>
